@@ -3,10 +3,15 @@ repos:
     rev: v4.5.0
     hooks:
       - id: trailing-whitespace
+        exclude: ^.idea/
       - id: end-of-file-fixer
+        exclude: ^.idea/
       - id: check-yaml
+        exclude: ^.idea/
       - id: debug-statements
+        exclude: ^.idea/
       - id: requirements-txt-fixer
+        exclude: ^.idea/
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.8.2
