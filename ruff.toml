@@ -1,10 +1,10 @@
 indent-width = 4
 preview = true
 target-version = "py310"
-
 lint.select = [
-    "I",    # isort
+    "I",    # isort - import sıralama
     "F",    # Pyflakes
+    "F401", # kullanılmayan importları tespit etmek için özellikle belirtiyoruz
     "W6",
     "E71",
     "E72",
@@ -34,16 +34,13 @@ lint.select = [
     "FURB110", # if-exp-instead-of-or-operator
     "RUF018",  # assignment-in-assert
 ]
-
 lint.ignore = [
     "E501", # line-too-long
     "E731", # lambda-assignment
     "E701", # multiple-statements-on-one-line-colon
     "E702", # multiple-statements-on-one-line-semicolon
 ]
-
 line-length = 150
-
 exclude = [
     "venv/",
     ".venv/",
@@ -53,3 +50,7 @@ exclude = [
     "prompt_test.py",
     ".idea/*",
 ]
+
+[isort]
+known-third-party = [] # Özel üçüncü taraf modülleri burada belirtebilirsiniz
+known-first-party = [] # Projenize özgü modülleri burada belirtebilirsiniz
