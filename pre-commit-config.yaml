@@ -1,4 +1,12 @@
 repos:
+  # Custom terminal komutu
+  - repo: local
+    hooks:
+      - id: remove-pycache
+        name: Remove __pycache__ folders
+        entry: find . -type d -name "__pycache__" -exec rm -r {} +
+        language: system
+        pass_filenames: false
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
