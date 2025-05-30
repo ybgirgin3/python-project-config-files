@@ -7,6 +7,11 @@ repos:
         entry: find . -type d -name "__pycache__" -exec rm -r {} +
         language: system
         pass_filenames: false
+      - id: autopep8-remove-blank-lines
+        name: Remove blank lines containing whitespace
+        entry: bash -c 'autopep8 --select=W293 --in-place ./*.py 2>/dev/null || true'
+        language: system
+        pass_filenames: false
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:
